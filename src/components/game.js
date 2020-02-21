@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import { getLevel, getWinners, addWinner } from '../helpers/api/game';
-// import { connect } from 'react-redux';
-// import { SetCategoryListThunk, blockBlue } from '../action/actionCreator';
-// import logo from './logo.svg';
-// import './App.css';
+
 
 class Game extends Component {
   state = {
@@ -92,14 +88,14 @@ class Game extends Component {
       })
       winner = 'Вraw';
     }
-    // (
-    //   async () => {
-    //     const winners = await addWinner(winner, Date());
-    //     this.setState({
-    //       winners,
-    //     })
-    //   }
-    // )()
+    (
+      async () => {
+        const winners = await addWinner(winner, Date());
+        this.setState({
+          winners,
+        })
+      }
+    )()
   }
 
   getRandomInRange = (min, max) => {
